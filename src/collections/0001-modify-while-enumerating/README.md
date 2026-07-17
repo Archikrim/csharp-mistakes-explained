@@ -2,7 +2,7 @@
 id: "0001"
 title: Modifying a collection while iterating
 category: collections
-level: 🟢 junior trap
+level: 🟢
 tags: [List, foreach, InvalidOperationException]
 summary: foreach + Remove on the same list — partial execution and a crash.
 ---

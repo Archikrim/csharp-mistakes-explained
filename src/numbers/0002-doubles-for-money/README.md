@@ -2,7 +2,7 @@
 id: "0002"
 title: Calculating money with double
 category: numbers
-level: 🟢 junior trap
+level: 🟢
 tags: [double, decimal, floating-point]
 summary: "`0.1 + 0.2 != 0.3` — binary floats can't hold decimal cents, and the audit won't reconcile."
 ---

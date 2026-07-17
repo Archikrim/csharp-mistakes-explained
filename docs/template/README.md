@@ -2,7 +2,7 @@
 id: "XXXX"
 title: Name the crime in a few words
 category: collections
-level: 🟢 junior trap
+level: 🟢  # or 🟡 / 🔴
 tags: [TypeInvolved, MethodInvolved]
 summary: One line for the front-page table — what breaks and how much it hurts.
 ---

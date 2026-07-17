@@ -2,7 +2,7 @@
 id: "0004"
 title: Mutating an object that lives as a dictionary key
 category: collections
-level: 🟡 mid-level trap
+level: 🟡
 tags: [Dictionary, GetHashCode, records]
 summary: "change a field on the key — `foreach` still shows the entry, lookups can't find it"
 ---

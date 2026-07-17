@@ -2,7 +2,7 @@
 id: "0003"
 title: Incrementing a shared counter from parallel threads
 category: async
-level: 🟢 junior trap
+level: 🟢
 tags: [threading, race-condition, Interlocked]
 summary: "`counter++` from two threads — thousands of increments quietly vanish."
 ---
