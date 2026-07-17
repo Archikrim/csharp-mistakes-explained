@@ -2,7 +2,7 @@
 
 Ideal tutorials teach you SOLID. **Bad** code is remembered better.
 
-> Museum stats: **6** exhibits in **5** halls, latest addition — **#0006**.
+> Museum stats: **7** exhibits in **5** halls, latest addition — **#0007**.
 
 ### 🗂 Collections
 
@@ -22,6 +22,7 @@ Ideal tutorials teach you SOLID. **Bad** code is remembered better.
 | # | Exhibit | Level | The pain |
 |--:|---------|-------|----------|
 | 0003 | [Incrementing a shared counter from parallel threads](src/async/0003-race-on-shared-counter/) | 🟢 | `counter++` from two threads — thousands of increments quietly vanish. |
+| 0007 | [async void and the uncatchable exception](src/async/0007-async-void/) | 🟡 | an exception in `async void` sails past your try/catch and kills the process |
 
 ### 💥 Exceptions
 
