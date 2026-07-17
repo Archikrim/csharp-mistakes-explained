@@ -2,13 +2,14 @@
 
 Ideal tutorials teach you SOLID. **Bad** code is remembered better.
 
-> Museum stats: **3** exhibits in **3** halls, latest addition — **#0003**.
+> Museum stats: **4** exhibits in **3** halls, latest addition — **#0004**.
 
 ### 🗂 Collections
 
 | # | Exhibit | Level | The pain |
 |--:|---------|-------|----------|
 | 0001 | [Modifying a collection while iterating](src/collections/0001-modify-while-enumerating/) | 🟢 | `foreach` + `Remove` on the same list — partial execution and a crash |
+| 0004 | [Mutating a dictionary key](src/collections/0004-dictionary-key-mutation/) | 🟡 | change a field on the key — `foreach` still shows the entry, lookups can't find it |
 
 ### 🔢 Numbers
 
