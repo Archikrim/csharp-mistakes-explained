@@ -52,7 +52,8 @@ free one with:
 dotnet run tools/next-id.cs
 ```
 
-Full guide: CONTRIBUTING.md *(coming soon)*.
+Then copy [the template](docs/template/) and follow
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Disclaimer
 
