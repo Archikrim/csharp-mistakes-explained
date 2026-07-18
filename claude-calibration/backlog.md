@@ -51,8 +51,8 @@ myths · rethrow across await boundaries._
 | slug | lvl | A | twist |
 |------|:--:|:--:|-------|
 | interpolated-injection | 🟡 | 4 | same `$"...{x}"` safe in FromSqlInterpolated, injection in FromSqlRaw. |
-| path-combine-betrayal | 🔴 | 5 | `Path.Combine(root, input)` silently DROPS root if input is absolute. No "..". |
 | guessable-random | 🟡 | 6 | `Random` for reset tokens; seed predictable, token reproducible. |
+| _(path-combine-betrayal rejected - see rejected.md: "doesn't happen in real code")_ | | | |
 
 ### value-types (hall opened by #0011)
 | slug | lvl | A | twist |
