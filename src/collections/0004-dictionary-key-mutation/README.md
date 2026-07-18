@@ -5,7 +5,7 @@ category: collections
 level: 🟡
 tags: [Dictionary, GetHashCode, records]
 summary: "change a field on the key - `foreach` still shows the entry, lookups can't find it"
-rule: "Never mutate an object that serves as a dictionary key"
+rule: "never mutate an object that serves as a dictionary key"
 ---
 
 # #0004 - Mutating an Object That Lives as a Dictionary Key
@@ -94,8 +94,3 @@ why `string` is the world's favorite dictionary key: it can't change.
 - `record` + `{ get; set; }` is a smell on its own; records want `init`.
 - Rider / ReSharper warn when `GetHashCode` depends on mutable state -
   treat that one as an error, not a suggestion.
-
-## 📚 Dig Deeper
-
-- [Object.GetHashCode - the "must not change while in a hash table" contract](https://learn.microsoft.com/dotnet/api/system.object.gethashcode)
-- [Records: value equality - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/record)

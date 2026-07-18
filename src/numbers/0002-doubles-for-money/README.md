@@ -5,7 +5,7 @@ category: numbers
 level: 🟢
 tags: [double, decimal, floating-point]
 summary: "`0.1 + 0.2 != 0.3` - binary floats can't hold decimal cents, and the audit won't reconcile."
-rule: "Never use `double` for money"
+rule: "never use `double` for money"
 ---
 
 # #0002 - Calculating Money with Double
@@ -90,8 +90,3 @@ explicit rounding policy - see `Math.Round` and `MidpointRounding`.
 - Check the database too: `FLOAT` / `REAL` columns holding currency are the
   same crime one layer down.
 - Any `==` between floating-point expressions is a red flag on its own.
-
-## 📚 Dig Deeper
-
-- [Floating-point numeric types - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types)
-- [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)

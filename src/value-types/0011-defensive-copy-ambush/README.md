@@ -5,7 +5,7 @@ category: value-types
 level: 🔴
 tags: [structs, readonly, defensive-copy]
 summary: "every method call on the readonly field runs on a hidden copy - points added, balance forever 0"
-rule: "Never write a mutable struct"
+rule: "never write a mutable struct"
 ---
 
 # #0011 - A Mutable Struct Behind a Readonly Field
@@ -110,8 +110,3 @@ magic - it's compile-time semantics, identical in Debug and Release.
   type" - this exhibit as a single inspection. Treat it as an error.
 - Grep `readonly` fields whose type is a struct you own, then check what
   gets called on them.
-
-## 📚 Dig Deeper
-
-- [Write safe and efficient C# code - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/write-safe-efficient-code)
-- [Choosing between class and struct - Microsoft Learn](https://learn.microsoft.com/dotnet/standard/design-guidelines/choosing-between-class-and-struct)

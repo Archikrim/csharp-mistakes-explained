@@ -34,7 +34,7 @@ category: linq             # == hall folder
 level: 🟡                  # bare emoji, no words
 tags: [LINQ, IEnumerable, deferred-execution]
 summary: "one line on what breaks - kept for the future index (curator edits these)"
-rule: "Never enumerate a LINQ query twice - materialize it once"  # == the front-page cell
+rule: "never enumerate a LINQ query twice - materialize it once"  # == the front-page cell; lowercase "never"
 ---
 ```
 Then sections (😈 and 🎓 optional but strongly preferred - they carry the senior audience):
@@ -45,8 +45,7 @@ Then sections (😈 and 🎓 optional but strongly preferred - they carry the se
 5. `## ✅ The Fix` - idiomatic fix + `[Good.cs](Good.cs)` + a "when to use which" table.
 6. `## 😈 The Even Worse Sibling` - the silent/nastier variant. Recurring punchline: "the crash in this exhibit is the *lucky* outcome."
 7. `## 🎓 Senior Nuance` - the twist that surprises experts (version history, edge case, myth-bust).
-8. `## 🔎 How to Find It in Your Codebase` - grep patterns, analyzer IDs (CA2200, VSTHRD100), IDE inspections, .editorconfig recipes.
-9. `## 📚 Dig Deeper` - 1-2 authoritative links (Microsoft Learn, Eric Lippert, Cleary, Fowler).
+8. `## 🔎 How to Find It in Your Codebase` - grep patterns, analyzer IDs (CA2200, VSTHRD100), IDE inspections, .editorconfig recipes. This is the LAST section - no link sections after it (Dig Deeper was removed by curator's call 2026-07-18: "nobody opens them").
 
 ## Front-page row
 
@@ -57,7 +56,7 @@ commandment, == front-matter `rule`:
 ```
 | | | | |
 |--:|---|---|---|
-| 0009 | [Enumerating a LINQ query twice](src/linq/0009-multiple-enumeration/) | 🟡 | Never enumerate a LINQ query twice - materialize it once |
+| 0009 | [Enumerating a LINQ query twice](src/linq/0009-multiple-enumeration/) | 🟡 | never enumerate a LINQ query twice - materialize it once |
 ```
 Then bump the stats line: `**N** exhibits in **M** halls, latest addition - **#NNNN**`.
 Link sits on the TITLE, not the number.
@@ -66,7 +65,7 @@ Hall emojis in use: 🗂 collections · 🔢 numbers · ⚡ async · 🔗 linq �
 
 ## Escape hatches learned the hard way
 
-- **EF Core / anything building a model at runtime:** file-based apps default to Native AOT, which forbids dynamic-code model building. Add `#:property PublishAot=false`. (Cost me exhibit #0008's first run.)
+- **Anything reflection/dynamic-code based needs `#:property PublishAot=false`:** file-based apps default to Native AOT semantics. Known victims: EF Core model building (#0008), System.Text.Json reflection-based (de)serialization (#0012). Add the directive preemptively whenever the exhibit touches reflection.
 - **Transitive CVE (NU1903):** if a pulled package flags an advisory, bump the offending transitive explicitly (`#:package SQLitePCLRaw.bundle_e_sqlite3@2.*` -> 2.1.12). A CVE in the fix is too ironic to ship.
 - **First run of a package exhibit** downloads NuGet (~1 min). Warn the curator; subsequent runs cache.
 

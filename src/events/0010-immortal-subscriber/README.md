@@ -5,7 +5,7 @@ category: events
 level: 🔴
 tags: [events, memory-leak, GC, WeakReference]
 summary: "a closed widget keeps reacting to events - the static event pins it in memory forever"
-rule: "Never subscribe to a long-lived event without unsubscribing"
+rule: "never subscribe to a long-lived event without unsubscribing"
 ---
 
 # #0010 - A Static Event That Never Lets Go
@@ -99,8 +99,3 @@ standard incantation: finalizers can briefly resurrect objects.
   `static field -> EventHandler -> your object`.
 - Turn this exhibit's WeakReference trick into a regression test for your
   disposables.
-
-## 📚 Dig Deeper
-
-- [Weak event patterns - Microsoft Learn](https://learn.microsoft.com/dotnet/desktop/wpf/events/weak-event-patterns)
-- [Fundamentals of garbage collection - Microsoft Learn](https://learn.microsoft.com/dotnet/standard/garbage-collection/fundamentals)

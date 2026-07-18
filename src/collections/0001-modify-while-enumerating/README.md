@@ -5,7 +5,7 @@ category: collections
 level: 🟢
 tags: [List, foreach, InvalidOperationException]
 summary: foreach + Remove on the same list - partial execution and a crash.
-rule: "Never modify a collection while iterating it"
+rule: "never modify a collection while iterating it"
 ---
 
 # #0001 - Modifying a Collection While Iterating
@@ -90,8 +90,3 @@ contract.
 - Rider / ReSharper flag this statically - don't ignore the yellow squiggles.
 - Suspicious pattern to search for: a loop whose body mentions the same
   variable it iterates over.
-
-## 📚 Dig Deeper
-
-- [List&lt;T&gt;.RemoveAll - Microsoft Learn](https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1.removeall)
-- [IEnumerator&lt;T&gt; and the enumeration contract](https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1)

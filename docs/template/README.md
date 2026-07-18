@@ -5,7 +5,7 @@ category: collections
 level: 🟢  # or 🟡 / 🔴
 tags: [TypeInvolved, MethodInvolved]
 summary: One line on what breaks and how much it hurts - kept for the future index.
-rule: "Never <the commandment this exhibit teaches> - this goes to the front-page table"
+rule: "never <the commandment this exhibit teaches> - this goes to the front-page table"
 ---
 
 # #XXXX - Title of the Exhibit
@@ -48,7 +48,3 @@ a counterintuitive edge case, a myth to bust.
 
 Concrete detection advice: what to grep for, what analyzers/IDE inspections
 flag it, what to watch for in code review.
-
-## 📚 Dig Deeper
-
-- [Link to official docs](https://learn.microsoft.com/dotnet/)

@@ -5,7 +5,7 @@ category: orm
 level: 🟡
 tags: [EFCore, SQL, performance]
 summary: "loading 20 orders costs 21 SQL queries - one for the list, one more per row"
-rule: "Never query the database inside a loop"
+rule: "never query the database inside a loop"
 ---
 
 # #0008 - The N+1 Query Problem
@@ -92,8 +92,3 @@ builds its model with dynamic code, which Native AOT forbids.
 - Enable EF Core command logging in staging and count queries per request;
   a list endpoint that sends more than a handful is this exhibit.
 - With lazy proxies on: any navigation property touched inside a loop.
-
-## 📚 Dig Deeper
-
-- [Loading related data - Microsoft Learn](https://learn.microsoft.com/ef/core/querying/related-data/)
-- [Efficient querying - Microsoft Learn](https://learn.microsoft.com/ef/core/performance/efficient-querying)

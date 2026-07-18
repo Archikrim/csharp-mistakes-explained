@@ -5,7 +5,7 @@ category: linq
 level: 🟢
 tags: [closures, lambdas, delegates]
 summary: "five callbacks, one shared `i` - every lambda reads the value after the loop ended"
-rule: "Never close over a loop variable - capture a copy"
+rule: "never close over a loop variable - capture a copy"
 ---
 
 # #0006 - A Closure Capturing the Loop Variable
@@ -98,8 +98,3 @@ keyword sits above it.
   is this exhibit in one sentence.
 - Test batches with more than one item. The one-item batch hides this bug
   perfectly.
-
-## 📚 Dig Deeper
-
-- [Eric Lippert - Closing over the loop variable considered harmful](https://ericlippert.com/2009/11/12/closing-over-the-loop-variable-considered-harmful-part-one/)
-- [Lambda expressions and captured variables - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/language-reference/operators/lambda-expressions)

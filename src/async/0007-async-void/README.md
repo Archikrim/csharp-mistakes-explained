@@ -5,7 +5,7 @@ category: async
 level: 🟡
 tags: [async, exceptions, fire-and-forget]
 summary: "an exception in `async void` sails past your try/catch and kills the process"
-rule: "Never write `async void` outside event handlers"
+rule: "never write `async void` outside event handlers"
 ---
 
 # #0007 - `async void` and the Uncatchable Exception
@@ -99,8 +99,3 @@ hunt.
   `Parallel.*`, timers, `IObservable.Subscribe`.
 - The `Microsoft.VisualStudio.Threading.Analyzers` package flags this as
   **VSTHRD100** - worth adding to any async-heavy codebase.
-
-## 📚 Dig Deeper
-
-- [Stephen Cleary - Async/Await Best Practices](https://learn.microsoft.com/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming)
-- [David Fowler - Async Guidance](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios/blob/master/AsyncGuidance.md)

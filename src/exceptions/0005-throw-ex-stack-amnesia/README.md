@@ -5,7 +5,7 @@ category: exceptions
 level: 🟡
 tags: [exceptions, stack-trace, CA2200]
 summary: "`throw ex` wipes the stack trace - the investigation starts at the wrong line"
-rule: "Never rethrow with `throw ex` - use bare `throw`"
+rule: "never rethrow with `throw ex` - use bare `throw`"
 ---
 
 # #0005 - Rethrowing with `throw ex`
@@ -107,8 +107,3 @@ crossing threads.
   `.editorconfig`: `dotnet_diagnostic.CA2200.severity = error`.
 - Grep candidates: `throw ex;`, `throw e;`, `throw exception;`.
 - In review: any catch block that mentions its own variable after `throw`.
-
-## 📚 Dig Deeper
-
-- [CA2200 - Microsoft Learn](https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200)
-- [ExceptionDispatchInfo - Microsoft Learn](https://learn.microsoft.com/dotnet/api/system.runtime.exceptionservices.exceptiondispatchinfo)

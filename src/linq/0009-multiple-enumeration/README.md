@@ -5,7 +5,7 @@ category: linq
 level: 🟡
 tags: [LINQ, IEnumerable, deferred-execution]
 summary: "the header counted 3 rows, the body printed 2 - each enumeration reruns the query"
-rule: "Never enumerate a LINQ query twice - materialize it once"
+rule: "never enumerate a LINQ query twice - materialize it once"
 ---
 
 # #0009 - Enumerating a LINQ Query Twice
@@ -92,8 +92,3 @@ a different answer each time.
 - Grep for `.Count()` and `.Any()` on variables that are later iterated.
 - At API boundaries, accept `IReadOnlyCollection<T>` when you intend to
   enumerate more than once - the signature then enforces materialization.
-
-## 📚 Dig Deeper
-
-- [Deferred execution and lazy evaluation - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/linq/get-started/deferred-execution-lazy-evaluation)
-- [Classification of standard query operators - Microsoft Learn](https://learn.microsoft.com/dotnet/csharp/linq/get-started/introduction-to-linq-queries)

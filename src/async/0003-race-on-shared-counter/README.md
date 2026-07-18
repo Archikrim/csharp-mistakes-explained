@@ -5,7 +5,7 @@ category: async
 level: 🟢
 tags: [threading, race-condition, Interlocked]
 summary: "`counter++` from two threads - thousands of increments quietly vanish."
-rule: "Never mutate shared state without synchronization"
+rule: "never mutate shared state without synchronization"
 ---
 
 # #0003 - Incrementing a Shared Counter from Parallel Threads
@@ -83,8 +83,3 @@ atomic read + atomic write is still not an atomic read-modify-write. And
   `Parallel.*`, timers, or event handlers.
 - Counters and totals that "drift" under load but behave in tests.
 - Search for `volatile` used as a race fix - it almost never is one.
-
-## 📚 Dig Deeper
-
-- [Interlocked - Microsoft Learn](https://learn.microsoft.com/dotnet/api/system.threading.interlocked)
-- [Managed threading best practices - Microsoft Learn](https://learn.microsoft.com/dotnet/standard/threading/managed-threading-best-practices)
