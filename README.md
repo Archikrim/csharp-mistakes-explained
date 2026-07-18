@@ -2,7 +2,7 @@
 
 Ideal tutorials teach you SOLID. **Bad** code is remembered better.
 
-> Museum stats: **9** exhibits in **6** halls, latest addition - **#0009**.
+> Museum stats: **10** exhibits in **7** halls, latest addition - **#0010**.
 
 ### 🗂 Collections
 
@@ -42,6 +42,12 @@ Ideal tutorials teach you SOLID. **Bad** code is remembered better.
 | # | Exhibit | Level | The pain |
 |--:|---------|-------|----------|
 | 0008 | [The N+1 query problem](src/orm/0008-n-plus-one/) | 🟡 | loading 20 orders costs 21 SQL queries - one for the list, one more per row |
+
+### 🔔 Events
+
+| # | Exhibit | Level | The pain |
+|--:|---------|-------|----------|
+| 0010 | [A static event that never lets go](src/events/0010-immortal-subscriber/) | 🔴 | a closed widget keeps reacting to events - the static event pins it in memory forever |
 
 # To Be Continued
 

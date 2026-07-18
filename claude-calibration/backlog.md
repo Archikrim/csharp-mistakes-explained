@@ -66,11 +66,10 @@ Order chosen to: open 4 new halls, spread archetypes, introduce 🔴.
 | the-vanishing-mutation | 🔴 | 3 | mutate struct from a collection -> mutates a copy; array works, List doesn't. |
 | defensive-copy-ambush | 🔴 | 3 | struct in readonly field; every method call runs on a fresh defensive copy. |
 
-### events (candidate new hall / under linq-delegates)
+### events (hall opened by #0010)
 | slug | lvl | A | twist |
 |------|:--:|:--:|-------|
-| the-immortal-subscriber | 🔴 | 6 | static event pins subscriber forever; WeakReference proof. |
-| the-unremovable-lambda | 🟡 | 1 | `Click -= (s,e)=>...` never unsubscribes; different delegate instance. |
+| the-unremovable-lambda | 🟡 | 1 | `Click -= (s,e)=>...` never unsubscribes; different delegate instance. Teased in #0010's 😈 section. |
 
 ### serialization (candidate new hall)
 | slug | lvl | A | twist |
