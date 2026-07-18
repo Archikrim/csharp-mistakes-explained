@@ -44,7 +44,6 @@ Order chosen to: open 4 new halls, spread archetypes, introduce 🔴.
 | slug | lvl | A | twist |
 |------|:--:|:--:|-------|
 | the-finally-that-lied | 🔴 | 5,7 | throw in finally REPLACES the real cause; sibling of 0005. |
-| cancellation-eaten-by-catch | 🟡 | 5 | `catch(Exception)` swallows OperationCanceledException; retries loop forever. |
 
 ### di-lifetimes (hall opened by #0014)
 | slug | lvl | A | twist |
