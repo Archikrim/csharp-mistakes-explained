@@ -1,6 +1,6 @@
 # C# Bad Practices
 
-> Museum stats: **13** exhibits in **9** halls, latest addition - **#0013**.
+> Museum stats: **14** exhibits in **10** halls, latest addition - **#0014**.
 
 ### 🗂 Collections
 
@@ -53,6 +53,12 @@
 | | | | |
 |--:|---|---|---|
 | 0011 | [A mutable struct behind a readonly field](src/value-types/0011-defensive-copy-ambush/) | 🔴 | never write a mutable struct |
+
+### 💉 DI Lifetimes
+
+| | | | |
+|--:|---|---|---|
+| 0014 | [Transient disposables resolved from the root container](src/di-lifetimes/0014-container-hoarder/) | 🔴 | never resolve transient disposables from the root container |
 
 ### 📄 Serialization
 

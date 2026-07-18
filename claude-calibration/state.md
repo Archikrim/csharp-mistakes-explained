@@ -2,8 +2,8 @@
 
 _Snapshot; `dotnet run tools/next-id.cs` is authoritative for numbering._
 
-- Exhibits: **13** | Halls: **9** | Next free id: **0014**
-- Last updated after: #0013 (2026-07-18)
+- Exhibits: **14** | Halls: **10** | Next free id: **0015**
+- Last updated after: #0014 (2026-07-18)
 
 ## Exhibits shipped
 
@@ -22,15 +22,16 @@ _Snapshot; `dotnet run tools/next-id.cs` is authoritative for numbering._
 | 0011 | value-types | defensive-copy-ambush | 🔴 | 3 |
 | 0012 | serialization | zero-priced-order | 🟡 | 4,5 |
 | 0013 | linq | distinct-that-didnt | 🟡 | 2,4 |
+| 0014 | di-lifetimes | container-hoarder | 🔴 | 5 |
 
 ## Halls
 
-- **Open (9):** collections, numbers, async, linq, exceptions, orm, events, value-types, serialization
-- **Closed, planned:** datetime, strings-memory, di-lifetimes, security
+- **Open (10):** collections, numbers, async, linq, exceptions, orm, events, value-types, serialization, di-lifetimes
+- **Closed, planned:** datetime, strings-memory, security
 
 ## Level mix
 
-- 🟢 4 | 🟡 7 | 🔴 2  ->  healthy; keep the spread.
+- 🟢 4 | 🟡 7 | 🔴 3  ->  healthy; keep the spread.
 
 ## Infra status
 

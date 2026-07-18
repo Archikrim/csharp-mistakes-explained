@@ -46,12 +46,11 @@ Order chosen to: open 4 new halls, spread archetypes, introduce 🔴.
 | the-finally-that-lied | 🔴 | 5,7 | throw in finally REPLACES the real cause; sibling of 0005. |
 | cancellation-eaten-by-catch | 🟡 | 5 | `catch(Exception)` swallows OperationCanceledException; retries loop forever. |
 
-### di-lifetimes (closed - flagship hall)
+### di-lifetimes (hall opened by #0014)
 | slug | lvl | A | twist |
 |------|:--:|:--:|-------|
-| the-captive-scoped | 🔴 | 6 | singleton captures scoped -> "current user" frozen; B sees A's cart. |
+| the-captive-scoped | 🔴 | 6 | singleton captures scoped -> "current user" frozen; B sees A's cart. Still the batch flagship. |
 | the-silent-override | 🟡 | 4 | two registrations of one iface; last wins silently. |
-| the-container-hoarder | 🔴 | 5 | transient IDisposable from root lives till process death; WeakReference+GC proof. |
 
 ### security (closed)
 | slug | lvl | A | twist |
