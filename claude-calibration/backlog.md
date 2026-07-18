@@ -24,7 +24,6 @@ Order chosen to: open 4 new halls, spread archetypes, introduce 🔴.
 | the-collected-timer | 🔴 | 6 | Timer with no stored ref gets GC'd; force GC.Collect, ticks stop. |
 | the-forgotten-task | 🟡 | 1,5 | unstored un-awaited Task; exception buried, "save" never happened. |
 | lock-on-a-string | 🔴 | 2 | `lock("cache")` in 2 classes = same interned object. Prove via ReferenceEquals. |
-| tasks-are-not-results | 🟡 | 1 | `Select(async ...)` yields Task<T>[], code treats as results. |
 
 ### datetime (hall closed - open with a strong one)
 | slug | lvl | A | twist |
