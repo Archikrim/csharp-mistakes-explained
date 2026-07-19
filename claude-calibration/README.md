@@ -1,6 +1,6 @@
 # claude-calibration
 
-Persistent working context for Claude on the **C# Bad Practices** museum.
+Persistent working context for Claude on the **C# Mistakes Explained** museum.
 Read this folder first at the start of any session; it restores context
 without re-reading every exhibit.
 

@@ -1,4 +1,4 @@
-# C# Bad Practices
+# C# Mistakes Explained
 
 > Museum stats: **22** exhibits in **11** halls, latest addition - **#0022**.
 
