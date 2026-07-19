@@ -28,7 +28,7 @@ From the original 10-step plan; steps 1-7 done (env -> first exhibits -> playboo
 ## Track C - open decisions / parking lot
 
 - **C1.** ~~Commit / gitignore / push `claude-calibration/`?~~ RESOLVED 2026-07-17: committed public. Curator's call - "so obscure nobody looks anyway," and it fits the open "AI executes" brand. Backlog spoiler risk accepted.
-- **C2.** New halls to formalize when their first exhibit lands: value-types, events, serialization. Add to `docs/playbook.md` halls list at that point.
+- **C2.** New halls to formalize when their first exhibit lands: add to the halls list in `.claude/skills/add-exhibit/SKILL.md`.
 - **C3.** LinkedIn poll extra ironic options - brainstormed set is in chat; not yet finalized.
 - **C4.** When tags matter (dozens of exhibits), backfill consistent `tags` across old exhibits so B8 cross-index is clean.
 

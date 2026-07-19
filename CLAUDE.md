@@ -26,6 +26,9 @@ does the same job right, and a `README.md` that explains the mechanic.
 
 ## Curation bar (when proposing exhibits)
 
+- **One exhibit = one broken mental model.** Not a typo, not a whole
+  architecture review. If explaining it needs two different "why"s, it's two
+  exhibits.
 - **Reject predictable finales.** If the reader guesses the outcome from the
   title, it's a listicle item, not an exhibit. An exhibit needs a mechanic
   twist - a "wait, WHAT?" even for someone who knows the bug.

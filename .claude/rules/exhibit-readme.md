@@ -63,7 +63,8 @@ enforces this.
 
 Restrained "lab / museum" voice. Jokes and punchlines are saved for LinkedIn,
 not the repo. The 💥 / 😈 / 🎓 section markers carry the personality; the prose
-stays informative.
+stays informative. **No shaming** - exhibits mock the code, never the author;
+we all wrote this at some point.
 
 ## Front-page row (added to the root README, done with every exhibit)
 

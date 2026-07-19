@@ -12,6 +12,8 @@ paths:
   `#:package Name@ver` directive at the top of the file.
 - **Believable domain.** OrderService, kiosks, a leaderboard, subscribers -
   never `Foo`/`Bar`. The reader should recognize their own codebase.
+- **30-100 lines per file.** Big enough to feel real, small enough to read over
+  coffee.
 
 ## The mirror rule
 
