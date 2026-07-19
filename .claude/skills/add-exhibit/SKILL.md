@@ -14,7 +14,7 @@ restate those rules.
 
 - **One exhibit = one broken mental model** (see the curation bar in
   `CLAUDE.md`).
-- Read `claude-calibration/rejected.md` first - never re-propose a declined
+- Read `.claude/memory/rejected.md` first - never re-propose a declined
   idea. Then `backlog.md` for the queued candidates and `archetypes.md` for
   balance.
 - Fix the hall (category) and a kebab-case slug that names the crime:
@@ -60,7 +60,7 @@ dotnet run tools/check-links.cs
 
 ## 7. Wire the front page and memory
 
-- If the hall is new, flip its row in `claude-calibration/halls.md` from planned
+- If the hall is new, flip its row in `.claude/memory/halls.md` from planned
   to opened first.
 - Regenerate the front page - never hand-edit it:
 
@@ -68,7 +68,7 @@ dotnet run tools/check-links.cs
   dotnet run tools/gen-frontpage.cs
   ```
 
-- Update `claude-calibration/state.md` (count, exhibit table, next id) and move
+- Update `.claude/memory/state.md` (count, exhibit table, next id) and move
   the candidate out of `backlog.md` (to done, or to `rejected.md` with a reason
   if it was dropped mid-build).
 
@@ -80,5 +80,5 @@ Leave the work uncommitted. Report the summary and the commit message
 ## Halls
 
 Valid categories, their emoji, and open/planned status live in the canonical
-registry `claude-calibration/halls.md`. Pick the hall from there. Opening a
+registry `.claude/memory/halls.md`. Pick the hall from there. Opening a
 planned hall: build its first exhibit, then flip its row from planned to opened.

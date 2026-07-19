@@ -10,21 +10,21 @@ names the specific cases to build, then the `add-exhibit` skill builds each one.
 
 ## Sources and filters
 
-- Pull queued ideas from `claude-calibration/backlog.md`.
-- **Exclude everything in `claude-calibration/rejected.md`** - never re-propose a
+- Pull queued ideas from `.claude/memory/backlog.md`.
+- **Exclude everything in `.claude/memory/rejected.md`** - never re-propose a
   declined idea, and pre-filter anything that trips its reason categories
   (predictable finale, can't reproduce, timing-only, CI-would-lie,
   doesn't-happen-in-real-code).
 - Apply the curation bar from `CLAUDE.md`: one broken mental model, reject
   predictable finales, prefer accessible + axiomatic, prefer silent-wrongness /
   money stakes.
-- Balance against `claude-calibration/archetypes.md` - spread across the 7
+- Balance against `.claude/memory/archetypes.md` - spread across the 7
   archetypes, don't stack one.
 
 ## Format (grouped by hall)
 
 Group candidates under their hall (the canonical hall list is
-`claude-calibration/halls.md`). Mark planned halls (a candidate there opens the
+`.claude/memory/halls.md`). Mark planned halls (a candidate there opens the
 hall). One line per candidate:
 
 ```

@@ -4,10 +4,6 @@ Remaining work, current as of the framework migration (2026-07-19).
 
 ## Open
 
-- **Relocate `claude-calibration/`.** The curator wants the setup fully
-  by-guidelines; this folder was freestyled. Decide the guideline-compliant home
-  for the memory files (state, backlog, rejected, archetypes, halls, todo) and
-  move them. *Pending curator's choice.*
 - **CI (GitHub Actions).** On push/PR: build/run every exhibit so they don't rot
   on SDK bumps; run `next-id.cs`, `check-links.cs`, and `gen-frontpage.cs`
   (fail if the front page is stale) - all three exit 1 on failure. Package
@@ -26,4 +22,6 @@ Remaining work, current as of the framework migration (2026-07-19).
 - Tools: `next-id.cs`, `check-links.cs`, `gen-frontpage.cs` (front page is now
   generated, list-style, no difficulty levels).
 - Hall taxonomy expanded to ~30 in `halls.md`.
+- Memory relocated from the freestyled `claude-calibration/` into `.claude/memory/`,
+  indexed by `MEMORY.md` and auto-loaded via a `CLAUDE.md` import.
 - Exhibits 0001-0023.

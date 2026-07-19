@@ -13,7 +13,7 @@ individual choices, not in categories, so every rejection is signal, not noise.
 
 1. **Get the reason in his words.** If it's one word, ask a brief follow-up - the
    "why" is the entire point of this skill. Don't paraphrase away his framing.
-2. **Append a row** to `claude-calibration/rejected.md`:
+2. **Append a row** to `.claude/memory/rejected.md`:
    `| <slug> | <reason category> | <his detailed reason, close to verbatim> |`
 3. **New category if needed.** If the reason doesn't fit an existing category
    (predictable finale, can't reproduce, timing-only, CI-would-lie,

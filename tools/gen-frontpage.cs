@@ -6,7 +6,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-if (!Directory.Exists("src") || !File.Exists("claude-calibration/halls.md"))
+if (!Directory.Exists("src") || !File.Exists(".claude/memory/halls.md"))
 {
     Console.Error.WriteLine("Run from the repo root: dotnet run tools/gen-frontpage.cs");
     return 1;
@@ -14,7 +14,7 @@ if (!Directory.Exists("src") || !File.Exists("claude-calibration/halls.md"))
 
 // 1. Hall registry order: (slug, emoji, display name), skipping headers/separators.
 var halls = new List<(string Slug, string Emoji, string Name)>();
-foreach (var line in File.ReadAllLines("claude-calibration/halls.md"))
+foreach (var line in File.ReadAllLines(".claude/memory/halls.md"))
 {
     if (Regex.IsMatch(line, @"^[\s|:-]+$")) continue; // separator row
     var m = Regex.Match(line, @"^\|\s*([a-z][a-z-]*)\s*\|\s*(\S+)\s*\|\s*([^|]+?)\s*\|");

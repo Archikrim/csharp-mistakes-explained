@@ -33,7 +33,7 @@ mistake is equally able to take down prod.
 ### value-types
 | slug | A | the twist |
 |------|:--:|---|
-| the-vanishing-mutation | 3 | mutate a struct from a collection -> mutates a copy; array works, List doesn't. Sibling of [0011-defensive-copy-ambush](../src/value-types/0011-defensive-copy-ambush/). |
+| the-vanishing-mutation | 3 | mutate a struct from a collection -> mutates a copy; array works, List doesn't. Sibling of [0011-defensive-copy-ambush](../../src/value-types/0011-defensive-copy-ambush/). |
 
 ### security (planned hall)
 | slug | A | the twist |

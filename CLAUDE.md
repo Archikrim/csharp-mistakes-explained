@@ -28,7 +28,7 @@ does the same job right, and a `README.md` that explains the mechanic.
 
 The curator's taste is **subjective and case-by-case** - it lives in his
 individual picks and rejections, not in categories. The `reject-exhibit` skill
-and `claude-calibration/rejected.md` are the main channel for learning it: study
+and `.claude/memory/rejected.md` are the main channel for learning it: study
 which specific cases he declines and why, and pre-filter future proposals
 accordingly. The bar below is the current distillation.
 
@@ -49,15 +49,11 @@ accordingly. The bar below is the current distillation.
 - `dotnet run tools/next-id.cs` - next free exhibit number; fails on duplicates.
 - `dotnet run tools/check-links.cs` - cross-references are links, links resolve.
 
-## Memory (read before proposing or generating)
+## Memory
 
-Project memory lives in `claude-calibration/` - plain data I maintain by hand:
+Committed project memory lives in `.claude/memory/`, indexed by `MEMORY.md`,
+which is imported below so its index loads every session. Read `rejected.md`
+before proposing; the topic files are read on demand. Memory updates are
+committed **separately** from exhibit commits.
 
-- `state.md` - current counts, halls, the exhibit table, next id.
-- `backlog.md` - candidate exhibits, prioritized.
-- `rejected.md` - what the curator declined and why. **Check before proposing.**
-- `archetypes.md` - the 7 bug archetypes; the curation taxonomy.
-- `todo.md` - numbered roadmap (exhibits, infra, open decisions).
-
-After an exhibit lands: update `state.md`, and move the candidate from
-`backlog.md` to done (or to `rejected.md` with a reason if declined).
+@.claude/memory/MEMORY.md
