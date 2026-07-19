@@ -4,10 +4,11 @@ Remaining work, current as of the framework migration (2026-07-19).
 
 ## Open
 
-- **CI (GitHub Actions).** On push/PR: build/run every exhibit so they don't rot
-  on SDK bumps; run `next-id.cs`, `check-links.cs`, and `gen-frontpage.cs`
-  (fail if the front page is stale) - all three exit 1 on failure. Package
-  exhibits (EF, DI, STJ) need restore; watch CI time.
+- **CI (GitHub Actions).** *Deferred by the curator (2026-07-19) - he will raise
+  it again; do not start unprompted.* On push/PR: build/run every exhibit so they
+  don't rot on SDK bumps; run `next-id.cs`, `check-links.cs`, and
+  `gen-frontpage.cs` (fail if the front page is stale) - all three exit 1 on
+  failure. Package exhibits (EF, DI, STJ) need restore; watch CI time.
 - **Launch polish.** Badges (exhibit count), final proofread, LinkedIn poll copy
   (<=30 chars, 4 options).
 - **Tags cross-index.** Once tags are consistent across exhibits, generate a
