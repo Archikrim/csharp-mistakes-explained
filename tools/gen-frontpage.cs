@@ -23,7 +23,7 @@ foreach (var line in File.ReadAllLines(".claude/memory/halls.md"))
 }
 
 // 2. Exhibits: front-matter of every src/<hall>/<NNNN-slug>/README.md.
-var exhibits = new List<(string Id, string Category, string Rule, string Folder)>();
+var exhibits = new List<(string Id, string Category, string Rule, string Folder, string Author)>();
 foreach (var path in Directory.GetFiles("src", "README.md", SearchOption.AllDirectories))
 {
     var text = File.ReadAllText(path);
@@ -38,7 +38,7 @@ foreach (var path in Directory.GetFiles("src", "README.md", SearchOption.AllDire
     }
 
     var folder = Path.GetFileName(Path.GetDirectoryName(path)!);
-    exhibits.Add((Field("id"), Field("category"), Field("rule"), folder));
+    exhibits.Add((Field("id"), Field("category"), Field("rule"), folder, Field("author")));
 }
 
 // 3. Build the generated block.
@@ -54,7 +54,11 @@ foreach (var hall in opened)
     body.AppendLine($"### {hall.Emoji} {hall.Name}");
     body.AppendLine();
     foreach (var e in exhibits.Where(e => e.Category == hall.Slug).OrderBy(e => e.Id))
-        body.AppendLine($"- [{e.Id}](src/{e.Category}/{e.Folder}/) {e.Rule}");
+    {
+        // Contributed exhibits carry an author; the curator's own stay uncredited.
+        var credit = string.IsNullOrWhiteSpace(e.Author) ? "" : $" (@{e.Author})";
+        body.AppendLine($"- [{e.Id}](src/{e.Category}/{e.Folder}/) {e.Rule}{credit}");
+    }
     body.AppendLine();
 }
 

@@ -20,6 +20,9 @@ rule: "never enumerate a LINQ query twice - materialize it once"
 
 - `rule` is the exhibit's commandment - lowercase `never ...`. It is the **only**
   text the front page shows for this exhibit, so it has to stand alone.
+- `author: github-username` - **only on contributed exhibits.** The generator
+  renders it as `(@username)` after the rule. The curator's own exhibits omit
+  the field and stay uncredited, so a contributor's name stands out.
 - **Emphasize the key words inside `rule`** so the front page is scannable:
   `**bold**` for the domain concept (the thing the reader scans for), backticks
   for real C# identifiers. One or two emphasized spans - not a bold soup.

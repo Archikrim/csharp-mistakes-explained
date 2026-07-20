@@ -3,6 +3,7 @@ id: "XXXX"
 title: Name the crime in a few words
 category: collections
 tags: [TypeInvolved, MethodInvolved]
+author:                    # github username - contributed exhibits only
 rule: "never <the commandment this exhibit teaches> - this goes to the front-page table"
 ---
 

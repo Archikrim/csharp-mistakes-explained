@@ -17,8 +17,12 @@ does the same job right, and a `README.md` that explains the mechanic.
 - **English** for everything committed (code, comments, docs, commit messages).
   Ukrainian stays in chat.
 - **Hyphens only** - never em/en dashes, anywhere.
-- **Solo project.** No external-contributor scaffolding (no CONTRIBUTING.md,
-  issue templates, "PRs welcome"). Curated by one person.
+- **Curated by one person, open to contributors.** Outside developers add
+  exhibits through the `contribute` skill and a pull request; the curator
+  reviews every one personally and hands out exhibit numbers himself. The
+  curation memory (`rejected.md` and the taste it encodes) is his editorial
+  record - use it to filter what you propose, never present or explain it to a
+  contributor.
 - **Commits:** imperative subject <=50 chars, no trailing period; body explains
   *why*; one logical change per commit; trailer
   `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`. Exhibit commits are
