@@ -8,7 +8,7 @@ end up with your username on the front page next to the rule you added.
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
 - [Claude Code](https://claude.com/claude-code)
-- A GitHub account (Claude forks the repo for you if you need it)
+- A GitHub account - Claude forks the repo for you, so you need nothing else
 
 ## How it goes
 

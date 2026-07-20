@@ -27,20 +27,24 @@ Three failures cost a beginner twenty minutes each if they surface late. Check
 all of them now, quietly, and fix what you can:
 
 ```bash
-dotnet --list-sdks                                        # need .NET 10
-gh auth status                                            # need a logged-in gh
-gh repo view --json viewerPermission -q .viewerPermission # WRITE/ADMIN or not
+dotnet --list-sdks   # need .NET 10
+gh auth status       # need a logged-in gh
 ```
 
 - **No .NET 10** - point them at https://dotnet.microsoft.com/download and stop.
 - **`gh` not authenticated** - have them run `gh auth login` now, not at the end.
-- **Where the branch goes** - decide this for them, do not make them choose:
-  - `WRITE` or `ADMIN`: they are a collaborator, so work right here.
-  - anything else: fork first with `gh repo fork --remote=true`, which clones
-    the fork and wires the remotes. A pull request from a fork is the normal
-    open-source path and needs no permission from anyone.
-- **Never build on `main`** - create the branch immediately either way:
-  `git switch -c exhibit/<slug>`.
+
+Then set up their own copy to work in. Contributors always work from a fork -
+nobody is given write access to this repository, and a fork needs no permission
+from anyone:
+
+```bash
+gh repo fork --remote=true      # creates their fork and wires the remotes
+git switch -c exhibit/<slug>    # never build on main
+```
+
+If `gh repo fork` reports the fork already exists, that is fine - they made one
+earlier. Just make sure `origin` points at **their** fork before any push.
 
 ## 2. Offer the menu
 
@@ -119,8 +123,8 @@ git push -u origin exhibit/<slug>
 gh pr create --fill
 ```
 
-`gh pr create` targets this repository whether the branch lives here or in their
-fork - the fork case needs no extra flags.
+`gh pr create` opens the pull request from their fork against this repository -
+no extra flags needed, and no access to this repo required at any point.
 
 Walk them through each command if it is their first time. Then set expectations:
 the maintainer reviews every exhibit personally and may ask for changes or
