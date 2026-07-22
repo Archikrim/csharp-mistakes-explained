@@ -22,6 +22,94 @@
   NREs it exists to prevent ship anyway - false confidence at project scale.
 - **Verified:** language-level erasure; verify at build.
 
+### the-smuggled-null (A5,6)
+
+- **Twist:** one JSON payload with `"CustomerId": null` writes null straight
+  into a non-nullable, even initialized, property - annotations exist only
+  at compile time, the deserializer never reads them, and the NRE fires far
+  downstream.
+- **Mechanic:** NRT is erased at runtime and System.Text.Json ignores it by
+  default: an explicit JSON null overwrites a non-nullable property (even
+  one with an initializer), and a missing member bound through a positional
+  record constructor passes default = null silently. `required` guards
+  *presence* only - a missing required member throws JsonException, but an
+  explicit null still lands. The real fix is
+  `JsonSerializerOptions.RespectNullableAnnotations` (.NET 9+), which turns
+  the annotation into an actual runtime check.
+- **Who hits it:** every API endpoint and message consumer - JS clients
+  serialize undefined as null routinely, and version skew drops members;
+  the DTO says non-null, the wire disagrees.
+- **Repro:** deserialize `{"CustomerId": null}` into a class DTO and `{}`
+  into a positional record; print both nulls, then dereference. BUILDER
+  WARNING: do not null-probe the property before the final dereference -
+  an `is null` probe teaches flow analysis the property can be null and
+  CS8602 appears; keep Bad.cs's dereference clean so the build stays
+  warning-free. `#:property PublishAot=false`.
+- **Damage:** NRE hours later, far from the boundary - or worse, the
+  "impossible" null is saved onward into the database and every consumer
+  inherits the type system's forbidden state.
+- **😈 seed:** `required` - the fix everyone reaches for - closes only the
+  missing-member door: `{"CustomerId": null}` sails through `required` and
+  lands anyway.
+- **Verified:** ran on .NET 10 (2026-07-22): explicit null overwrote the
+  initialized property; record ctor bound null for a missing member;
+  required threw for missing but accepted explicit null; the dereference
+  compiled warning-free and threw NRE; RespectNullableAnnotations made the
+  same payload throw JsonException instead.
+
+### the-oblivious-boundary (A5)
+
+- **Twist:** a fully nullable-enabled caller dereferences a legacy helper's
+  result with zero warnings and dies with NRE - code without a nullable
+  context is "oblivious", and the analysis stops at its edge without ever
+  saying that it stopped.
+- **Mechanic:** types coming from `#nullable disable` code and un-annotated
+  pre-NRT libraries are null-oblivious: the compiler holds no opinion, so
+  there is no warning on the dereference and none on assignments either.
+  Nothing in the caller's file marks the boundary - warning silence looks
+  identical to verified safety.
+- **Who hits it:** every partially migrated codebase and every consumer of
+  un-annotated NuGet packages - "we enabled nullable, fixed every warning,
+  and still NRE weekly".
+- **Repro:** one file, `#nullable enable` on top: call a `#nullable disable`
+  class whose Find returns null and dereference the result - the build
+  prints zero warnings, the runtime throws NRE. Deterministic, no packages.
+- **Damage:** false confidence at project scale: the annotation effort
+  reports the codebase clean while the holes sit exactly where the risk
+  always was - the oldest code and the third-party edges.
+- **😈 seed:** adding one `#nullable enable` line inside the legacy file
+  flips the caller's dereference to a warning - the safety of every call
+  site is decided inside the callee's file, where no caller is looking.
+- **Verified:** ran on .NET 10 (2026-07-22): zero warnings on the oblivious
+  call and dereference; NRE at the annotated call site.
+
+### the-stale-narrowing (A1,5)
+
+- **Twist:** `if (_user != null)` narrows the field, the helper call on the
+  next line sets it back to null, and the compiler keeps vouching for the
+  dereference after it - the null check was a snapshot, the analysis treats
+  it as a promise.
+- **Mechanic:** nullable flow analysis does not model side effects of
+  method calls: narrowing on a field survives any number of intervening
+  calls (a deliberate, documented soundness trade-off), and only a direct
+  assignment visible in the same body resets it. So annotated, `!`-free,
+  warning-free code throws NRE.
+- **Who hits it:** stateful classes: a guard at the top of a handler, then
+  cleanup/reset/audit helpers mid-body that null the field - plus the
+  async and event variants where someone else's continuation does it
+  between the check and the use.
+- **Repro:** `string? _user`; Handle() checks `!= null`, calls
+  FinishAudit() which nulls the field, then dereferences - no warning,
+  NRE. Deterministic, no packages.
+- **Damage:** NRE on a line the compiler explicitly approved, in a class
+  the team believes proven null-safe - so the investigation starts by
+  distrusting everything except the actual cause.
+- **😈 seed:** swap the helper for an await and the mutation no longer
+  needs to be in your code at all - any continuation or second thread can
+  null the field mid-method; the analysis was never designed to see it.
+- **Verified:** ran on .NET 10 (2026-07-22): no warning on the post-call
+  dereference; NRE at runtime.
+
 ## Seeds
 
 Not yet a full candidate - brainstorm before proposing.
@@ -29,3 +117,8 @@ Not yet a full candidate - brainstorm before proposing.
 - **default-of-t-is-null** (A5,6) - a generic `T Get<T>()` returning
   `default` hands back null for every reference T despite the non-nullable
   annotation: the "never null" contract is a compile-time fiction.
+
+- **nullability:** `new string[10]` and `default(StructWithStringField)`
+  both manufacture nulls of a non-nullable type with zero warnings
+  (verified 2026-07-22) - primer-adjacent as a standalone; more likely a 😈
+  inside the-smuggled-null or value-types' the-skipped-initializer.
