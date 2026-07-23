@@ -2,8 +2,8 @@
 
 _Snapshot; `dotnet run tools/next-id.cs` is authoritative for numbering._
 
-- Exhibits: **32** | Halls: **15** | Next free id: **0033**
-- Last updated after: #0032 (2026-07-23) - switch-expression-not-exhaustive
+- Exhibits: **33** | Halls: **16** | Next free id: **0034**
+- Last updated after: #0033 (2026-07-23) - switch-expression-not-exhaustive
 
 ## Exhibits shipped
 
@@ -40,11 +40,12 @@ _Snapshot; `dotnet run tools/next-id.cs` is authoritative for numbering._
 | 0029 | numbers | nan-poisons-comparison | 4 |
 | 0030 | collections | array-covariance-betrayal | 4 |
 | 0031 | async | parallel-foreach-swallows-async | 1,5 |
-| 0032 | pattern-matching | switch-expression-not-exhaustive | 5 |
+| 0032 | logging | interpolated-log-loses-everything | 4 |
+| 0033 | pattern-matching | switch-expression-not-exhaustive | 5 |
 
 ## Halls
 
-**15 opened**, the rest planned. Full registry (slugs, emoji, status) is in
+**16 opened**, the rest planned. Full registry (slugs, emoji, status) is in
 `halls.md` - the encyclopedia taxonomy expanded to ~30 halls on 2026-07-19.
 
 ## Infra status

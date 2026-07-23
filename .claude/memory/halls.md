@@ -29,6 +29,7 @@ per hall. New halls: add a row here first.
 | equality | ⚖️ | Equality |
 | records | 📇 | Records |
 | pattern-matching | 🧩 | Pattern Matching |
+| logging | 🪵 | Logging |
 
 ## Planned - language mechanics
 
@@ -53,7 +54,6 @@ per hall. New halls: add a row here first.
 |------|:--:|---|
 | http | 🌐 | HTTP |
 | configuration | ⚙️ | Configuration |
-| logging | 🪵 | Logging |
 | regex | 🔤 | Regex |
 | testing | 🧪 | Testing |
 | io | 📁 | IO & Files |

@@ -1,4 +1,4 @@
-// Exhibit #0032: a switch expression that only ever warned about missing cases
+// Exhibit #0033: a switch expression that only ever warned about missing cases
 
 // OrderStatus lives in a shared contract package both the fulfillment centre
 // and this notification service reference. Fulfillment just shipped Returned;

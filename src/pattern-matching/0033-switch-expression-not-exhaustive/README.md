@@ -1,12 +1,12 @@
 ---
-id: "0032"
+id: "0033"
 title: A switch expression that only ever warned
 category: pattern-matching
 tags: [switch-expression, enum, CS8509]
 rule: "never trust a **switch expression** to be exhaustive just because it once compiled clean"
 ---
 
-# #0032 - A switch expression that only ever warned
+# #0033 - A switch expression that only ever warned
 
 ## 💥 Symptom
 

@@ -1,6 +1,6 @@
 # 🧩 pattern-matching
 
-> Status: **planned**. Canonical hall registry (emoji, display name, opened/planned) is `.claude/memory/halls.md`.
+> Status: **opened**. Canonical hall registry (emoji, display name, opened/planned) is `.claude/memory/halls.md`.
 > Entry format and maintenance rules are in `.claude/memory/backlog/README.md`.
 
 ### not-binds-before-or (A4,5)
